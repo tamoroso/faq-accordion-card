@@ -1,0 +1,39 @@
+@use '../utils/variables' as *;
+@use '../base/typography' as *;
+
+body, h1, span, p{
+    font-family: $font-family;
+}
+
+span, p{
+    font-weight: $normal-weight;
+}
+
+p{
+    font-size: $body-font-size;
+    color: $neutral-text-color-2;
+}
+
+span{
+    font-size: 1rem;
+    color: $neutral-text-color-1;
+}
+
+h1{
+    font-size: $title-font-size;
+}
+
+button{
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.FAQ{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

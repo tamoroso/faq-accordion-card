@@ -1,0 +1,19 @@
+@use '../utils/variables' as *;
+
+.card-container{
+    display: flex;
+    min-height: 65%;
+    width: 68%;
+    background: white;
+    border-radius: 2em;
+    box-shadow: 0px 60px 60px -20px $neutral-text-color-1;
+    padding: 4em 5em;
+    &__Q-A, &__image{
+        width: 50%;
+        padding: 0 1em;
+        margin: 2.5em 0 auto 0;
+    }
+    & h1{
+        padding-bottom: 2.5rem; 
+    }
+}

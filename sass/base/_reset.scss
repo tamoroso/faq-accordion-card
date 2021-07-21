@@ -1,0 +1,14 @@
+@use '../utils/variables' as *;
+@use '../base/typography' as *;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(0deg, $gradient-color-2 0%, $gradient-color-1 100%);
+}
+
+
