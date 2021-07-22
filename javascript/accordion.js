@@ -8,15 +8,16 @@ for(i=0; i < buttons.length; i++){
         var panel = this.nextElementSibling;
         var span = this.querySelector(spanSelector);
         var arrow = this.querySelector(svgSelector);
+        console.log(panel.classList.value === "accordion__panel accordion__panel--folded");
 
-        if (panel.style.display === "block") {
+        if (panel.classList.value === "accordion__panel accordion__panel--active") {
             span.className = "";
             arrow.className.baseVal= "" ;
-            panel.style.display ="none";
+            panel.classList.replace("accordion__panel--active","accordion__panel--folded");
         } else {
             arrow.className.baseVal = "accordion__arrow--active";
             span.className = "accordion__question--active";
-            panel.style.display = "block";
+            panel.classList.replace("accordion__panel--folded","accordion__panel--active") ;
 
         }
     });

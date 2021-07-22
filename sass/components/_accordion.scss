@@ -1,4 +1,4 @@
-@use '../utils/variables' as *;
+    @use '../utils/variables' as *;
 @use '../base/typography' as *;
 
 .accordion{
@@ -7,7 +7,15 @@
     &> div{
     display: flex;
     justify-content: space-between;
-    padding: 1.3rem 0;
+    padding: 1rem 0;
+    }
+    &__panel{
+        overflow: hidden;
+        transition: opacity 600ms ease-in-out, max-height 700ms ease-in-out, transform 600ms ease-in-out;
+        & p{
+            padding-bottom: 1.2rem;
+            line-height: 1.2rem;
+        }
     }
 }
 
@@ -17,8 +25,23 @@
     background: $divider-color;
 }
 
-.accordion__panel--folded{
-    display: none;
+.accordion__panel{
+    &--active{
+        transform-origin: top center;
+        transform: scaleY(1);
+        opacity: 1;
+        max-height: 1000px;
+    }
+    &--folded{
+        transform-origin: top center;
+        transform: scaleY(0);
+        max-height:0;
+        opacity: 0;
+    }
+}
+
+.accordion>div>.accordion__question>span{
+    transition: all ease-in-out 250ms;
 }
 
 .accordion:hover>div>.accordion__question>span{

@@ -5,8 +5,9 @@
 }
 
 body {
-  height: 100vh;
   background: linear-gradient(0deg, #6565e7 0%, #af67e9 100%);
+  background-repeat: no-repeat;
+  min-height: fit-content;
 }
 
 .accordion {
@@ -16,7 +17,15 @@ body {
 .accordion > div {
   display: flex;
   justify-content: space-between;
-  padding: 1.3rem 0;
+  padding: 1rem 0;
+}
+.accordion__panel {
+  overflow: hidden;
+  transition: opacity 600ms ease-in-out, max-height 700ms ease-in-out, transform 600ms ease-in-out;
+}
+.accordion__panel p {
+  padding-bottom: 1.2rem;
+  line-height: 1.2rem;
 }
 
 .accordion__divider {
@@ -25,8 +34,21 @@ body {
   background: #e7e7e9;
 }
 
+.accordion__panel--active {
+  transform-origin: top center;
+  transform: scaleY(1);
+  opacity: 1;
+  max-height: 1000px;
+}
 .accordion__panel--folded {
-  display: none;
+  transform-origin: top center;
+  transform: scaleY(0);
+  max-height: 0;
+  opacity: 0;
+}
+
+.accordion > div > .accordion__question > span {
+  transition: all ease-in-out 250ms;
 }
 
 .accordion:hover > div > .accordion__question > span {
@@ -43,20 +65,32 @@ body {
 
 .card-container {
   display: flex;
-  min-height: 65%;
+  align-items: center;
+  justify-content: center;
+  min-height: 70%;
   width: 68%;
   background: white;
   border-radius: 2em;
   box-shadow: 0px 60px 60px -20px #4a4b5e;
-  padding: 4em 5em;
+  padding: 5em 5em;
+  margin: 2em 0;
+  background-image: url("../../images/desktop/bg-pattern-desktop.svg"), url("../../images/desktop/illustration-woman-online-desktop.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: -570px -290px, -80px 80px;
 }
-.card-container__Q-A, .card-container__image {
+.card-container__Q-A, .card-container__images {
   width: 50%;
   padding: 0 1em;
-  margin: 2.5em 0 auto 0;
+  margin: auto 0;
 }
 .card-container h1 {
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+.card-container__images img {
+  position: relative;
+  right: 195px;
+  top: 50%;
+  transform: translateY(25%);
 }
 
 body, h1, span, p {
@@ -90,7 +124,8 @@ button {
 .FAQ {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
+  height: fit-content;
   width: 100%;
   justify-content: center;
   align-items: center;
