@@ -1,4 +1,5 @@
 @use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 .card-container{
     display: flex;
@@ -7,26 +8,83 @@
     min-height: 70vh;
     width: 68vw;
     background: white;
-    border-radius: 2em;
+    border-radius: 1.5em;
     box-shadow: 0px 60px 60px -20px $neutral-text-color-1;
     padding: 5em 5em;
     margin: 2em 0;
     background-image: url("../../images/desktop/illustration-woman-online-desktop.svg"),url("../../images/desktop/bg-pattern-desktop.svg");
     background-repeat: no-repeat, no-repeat;
-    background-position: -80px 80px, -570px -290px;
+    background-position: -80px 50%, -570px 70%;
+    @include intermediate{
+        padding-right: 1em;
+        background-position-x: -100px, -590px;
+    }
+    @include mobile-only{
+        flex-direction: column;
+        width: 88vw;
+        min-height: 70vh;
+        padding: 0 1.5em;
+        background-image: none;
+        margin-top: 7em;
+    } 
     &__Q-A, &__images{
         width: 50%;
         padding: 0 1em;
         margin: auto 0;
+        @include mobile-only{
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    }
+    &__images{
+        @include mobile-only{
+            height:110px;
+            margin-bottom: auto;
+        }
+    }
+    &__Q-A{
+        @include mobile-only{
+            padding-bottom: 2.8em ;
+            height: 80%;
+        }
     }
     & h1{
-        padding-bottom: 1.5rem; 
+        padding-bottom: 1.3rem;
+        @include mobile-only{
+            text-align: center;
+        } 
     }
-    &__images img{
+    &__images--desktop-box{
         position: relative;
         right: 195px;
         top: 50%;
         transform: translateY(25%);
+        @include intermediate{
+            right: 220px;
+        }
+        @include mobile-only{
+            display: none;
+        }
+    }
+    &__images--mobile-bg,
+    &__images--mobile-illustration{
+        display: none;
+        @include mobile-only{
+            display: block;
+            position: relative;
+
+        }
+    }
+    &__images--mobile-bg{
+        right: -50%;
+        transform: translateX(-50%);
+        top:-2px;
+    }
+    &__images--mobile-illustration{
+        right: -50%;
+        transform: translateX(-55%);
+        top: -215px;
     }
 }
 

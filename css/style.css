@@ -71,27 +71,96 @@ body {
   min-height: 70vh;
   width: 68vw;
   background: white;
-  border-radius: 2em;
+  border-radius: 1.5em;
   box-shadow: 0px 60px 60px -20px #4a4b5e;
   padding: 5em 5em;
   margin: 2em 0;
   background-image: url("../../images/desktop/illustration-woman-online-desktop.svg"), url("../../images/desktop/bg-pattern-desktop.svg");
   background-repeat: no-repeat, no-repeat;
-  background-position: -80px 80px, -570px -290px;
+  background-position: -80px 50%, -570px 70%;
+}
+@media screen and (max-width: 1200px) {
+  .card-container {
+    padding-right: 1em;
+    background-position-x: -100px, -590px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .card-container {
+    flex-direction: column;
+    width: 88vw;
+    min-height: 70vh;
+    padding: 0 1.5em;
+    background-image: none;
+    margin-top: 7em;
+  }
 }
 .card-container__Q-A, .card-container__images {
   width: 50%;
   padding: 0 1em;
   margin: auto 0;
 }
-.card-container h1 {
-  padding-bottom: 1.5rem;
+@media screen and (max-width: 1000px) {
+  .card-container__Q-A, .card-container__images {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
 }
-.card-container__images img {
+@media screen and (max-width: 1000px) {
+  .card-container__images {
+    height: 110px;
+    margin-bottom: auto;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .card-container__Q-A {
+    padding-bottom: 2.8em;
+    height: 80%;
+  }
+}
+.card-container h1 {
+  padding-bottom: 1.3rem;
+}
+@media screen and (max-width: 1000px) {
+  .card-container h1 {
+    text-align: center;
+  }
+}
+.card-container__images--desktop-box {
   position: relative;
   right: 195px;
   top: 50%;
   transform: translateY(25%);
+}
+@media screen and (max-width: 1200px) {
+  .card-container__images--desktop-box {
+    right: 220px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .card-container__images--desktop-box {
+    display: none;
+  }
+}
+.card-container__images--mobile-bg, .card-container__images--mobile-illustration {
+  display: none;
+}
+@media screen and (max-width: 1000px) {
+  .card-container__images--mobile-bg, .card-container__images--mobile-illustration {
+    display: block;
+    position: relative;
+  }
+}
+.card-container__images--mobile-bg {
+  right: -50%;
+  transform: translateX(-50%);
+  top: -2px;
+}
+.card-container__images--mobile-illustration {
+  right: -50%;
+  transform: translateX(-55%);
+  top: -215px;
 }
 
 body, h1, span, p {
@@ -116,12 +185,12 @@ p {
 }
 
 span {
-  font-size: 1rem;
+  font-size: 13px;
   color: #4a4b5e;
 }
 
 h1 {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
 }
 
 button {
