@@ -5,6 +5,14 @@ body, h1, span, p{
     font-family: $font-family;
 }
 
+body{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+
 span, p{
     font-weight: $normal-weight;
 }

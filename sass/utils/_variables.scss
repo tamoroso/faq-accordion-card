@@ -12,3 +12,9 @@ $neutral-text-color-1:hsl(237,12%,33%);
 $neutral-text-color-2:hsl(240,6%,50%);
 //Dividers
 $divider-color:hsl(240,5%,91%);
+
+//Screen sizes
+$breakpoints: (
+    intermediate : 900px,
+    mobile: 600px
+);
